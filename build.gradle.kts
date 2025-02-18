@@ -19,6 +19,12 @@ repositories {
 dependencies {
     implementation("io.insert-koin:koin-core:3.5.0")
     implementation("com.h2database:h2:2.3.232")
+    implementation("org.jetbrains.exposed:exposed-core:0.44.0")
+    implementation ("org.slf4j:slf4j-api:2.0.0")
+    implementation ("ch.qos.logback:logback-classic:1.4.12")
+    implementation("org.mindrot:jbcrypt:0.4")
+    implementation("org.jetbrains.exposed:exposed-dao:0.44.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.44.0")
     implementation(compose.desktop.currentOs)
 }
 
