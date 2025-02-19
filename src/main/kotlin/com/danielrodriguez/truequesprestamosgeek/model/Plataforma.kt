@@ -7,9 +7,7 @@ enum class Plataforma(val nombre :String) {
     SWITCH("Switch");
     
     companion object {
-        fun fromString(value: String): Plataforma? {
-            return entries.find { it.nombre.equals(value, ignoreCase = true) }
-        }
+        private val map = entries.associateBy(Plataforma::name)
     }
 
 }

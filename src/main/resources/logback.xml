@@ -1,0 +1,18 @@
+<configuration>
+
+    <!-- Definir el nivel global de logging -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <!-- Configurar el logger específico para Exposed -->
+    <logger name="org.jetbrains.exposed" level="WARN"/>
+
+    <!-- Configurar el appender para la salida en consola -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+</configuration>

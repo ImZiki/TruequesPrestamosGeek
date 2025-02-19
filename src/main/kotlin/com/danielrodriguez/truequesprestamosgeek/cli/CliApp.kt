@@ -1,18 +1,16 @@
 package com.danielrodriguez.truequesprestamosgeek.cli
 
-import com.danielrodriguez.truequesprestamosgeek.controller.CliController
 
 class CliApp{
     fun start(){
         //TODO cambiar parametros de entrada al metodo.
-        var login = false
+        val login = false
         var error = null.orEmpty()
         while (login){
             println("Introduce usuario: ")
             val username = readlnOrNull() ?:continue
             println("Introduce contraseña: ")
             val password = readlnOrNull() ?:continue
-            login = CliController.login(username, password)
 
         }
 
