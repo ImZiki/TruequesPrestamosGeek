@@ -1,4 +1,4 @@
-package com.danielrodriguez.truequesprestamosgeek.model
+package com.danielrodriguez.truequesprestamosgeek.model.enums
 
 enum class TipoProducto(val nombre:String) {
     VIDEOJUEGO("Videojuego"),

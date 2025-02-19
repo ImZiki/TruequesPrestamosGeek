@@ -1,4 +1,4 @@
-package com.danielrodriguez.truequesprestamosgeek.model
+package com.danielrodriguez.truequesprestamosgeek.model.enums
 
 enum class EstadoProducto(val nombre: String) {
     DISPONIBLE("Disponible"),

@@ -1,4 +1,4 @@
-package com.danielrodriguez.truequesprestamosgeek.model
+package com.danielrodriguez.truequesprestamosgeek.model.entities
 
 import org.jetbrains.exposed.dao.id.EntityID
 import org.jetbrains.exposed.dao.id.IntIdTable

@@ -1,5 +1,10 @@
-package com.danielrodriguez.truequesprestamosgeek.model
+package com.danielrodriguez.truequesprestamosgeek.model.entities
 
+import com.danielrodriguez.truequesprestamosgeek.model.entities.Producto
+import com.danielrodriguez.truequesprestamosgeek.model.entities.Usuario
+import com.danielrodriguez.truequesprestamosgeek.model.entities.Usuarios
+import com.danielrodriguez.truequesprestamosgeek.model.enums.EstadoProducto
+import com.danielrodriguez.truequesprestamosgeek.model.enums.Plataforma
 import org.jetbrains.exposed.dao.id.IntIdTable
 
 

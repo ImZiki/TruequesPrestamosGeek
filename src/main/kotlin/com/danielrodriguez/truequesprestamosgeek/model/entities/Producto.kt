@@ -1,5 +1,6 @@
-package com.danielrodriguez.truequesprestamosgeek.model
+package com.danielrodriguez.truequesprestamosgeek.model.entities
 
+import com.danielrodriguez.truequesprestamosgeek.model.entities.Usuario
 import org.jetbrains.exposed.dao.id.IntIdTable
 
 object Productos : IntIdTable(){

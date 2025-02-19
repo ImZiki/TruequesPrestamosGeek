@@ -1,7 +1,7 @@
 package com.danielrodriguez.truequesprestamosgeek.dao
 
-import com.danielrodriguez.truequesprestamosgeek.model.Usuario
-import com.danielrodriguez.truequesprestamosgeek.model.Usuarios
+import com.danielrodriguez.truequesprestamosgeek.model.entities.Usuario
+import com.danielrodriguez.truequesprestamosgeek.model.entities.Usuarios
 import com.danielrodriguez.truequesprestamosgeek.utils.errors.LoginException
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.insertAndGetId
@@ -41,20 +41,18 @@ class UsuarioDAO {
         }
     }
     fun registrarUsuario(nombre: String, email: String, password: String): Usuario {
-        //TODO editar para que aqui solo se haga el acceso a la bd
         // Lógica para registrar usuario
         return transaction{
             val usuarioId = Usuarios.insertAndGetId {
                 it[Usuarios.nombre] = nombre
                 it[Usuarios.email] = email
-                it[Usuarios.password] = BCrypt.hashpw(password, BCrypt.gensalt())
+                it[Usuarios.password] = password
             }
             Usuario(
                 id = usuarioId.value,
                 nombre = nombre,
                 email = email,
-                password = BCrypt.hashpw(password, BCrypt.gensalt()),
-
+                password = password
                 )
         }
     }

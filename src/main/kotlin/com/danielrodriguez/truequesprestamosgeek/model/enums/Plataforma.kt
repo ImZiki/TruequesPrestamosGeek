@@ -1,4 +1,4 @@
-package com.danielrodriguez.truequesprestamosgeek.model
+package com.danielrodriguez.truequesprestamosgeek.model.enums
 
 enum class Plataforma(val nombre :String) {
     PC("PC"),

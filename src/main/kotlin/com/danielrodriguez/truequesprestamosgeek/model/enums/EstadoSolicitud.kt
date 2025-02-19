@@ -1,4 +1,4 @@
-package com.danielrodriguez.truequesprestamosgeek.model
+package com.danielrodriguez.truequesprestamosgeek.model.enums
 
 enum class EstadoSolicitud(val nombre: String) {
     PENDIENTE("Pendiente"),

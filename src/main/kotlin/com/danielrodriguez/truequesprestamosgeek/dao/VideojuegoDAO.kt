@@ -1,6 +1,6 @@
 package com.danielrodriguez.truequesprestamosgeek.dao
 
-import com.danielrodriguez.truequesprestamosgeek.model.Producto
+import com.danielrodriguez.truequesprestamosgeek.model.entities.Producto
 
 class VideojuegoDAO: ProductosDAO {
     override fun agregarProducto(producto: Producto) {
