@@ -1,5 +1,6 @@
 package com.danielrodriguez.truequesprestamosgeek.model
 
+import org.jetbrains.exposed.dao.id.EntityID
 import org.jetbrains.exposed.dao.id.IntIdTable
 
 object Usuarios : IntIdTable() {
@@ -11,8 +12,8 @@ object Usuarios : IntIdTable() {
 
 
 data class Usuario(
-    val id : Int,
+    val id: Int,
     val nombre: String,
     var email: String,
-    var password : String
+    var password: String
 )

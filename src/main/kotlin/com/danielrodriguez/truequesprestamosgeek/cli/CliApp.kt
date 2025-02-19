@@ -15,8 +15,9 @@ class CliApp{
         }
 
     }
-    fun menu(){
+    fun menu(usuario: String){
         println("=== Trueque & Préstamos Geek ===")
+        println("Bienvenido, $usuario")
         println("1. Registrar nuevo usuario")
         println("2. Agregar producto")
         println("3. Listar productos")
@@ -26,12 +27,6 @@ class CliApp{
         println("7. Ficheros Carga productos (txt, json)")
         println("8. Ficheros Descarga productos (txt, json)")
         println("0. Salir")
-        print("Seleccione una opción: ")
-
-        val opcion = readlnOrNull()?.toIntOrNull()
-
-        when(opcion){
-
-        }
+        print("Selecciona una opción: ")
     }
 }

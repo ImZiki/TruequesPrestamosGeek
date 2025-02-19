@@ -1,11 +1,9 @@
 package com.danielrodriguez.truequesprestamosgeek.db
 
-import com.danielrodriguez.truequesprestamosgeek.model.Libros
-import com.danielrodriguez.truequesprestamosgeek.model.Plataforma
-import com.danielrodriguez.truequesprestamosgeek.model.Usuarios
-import com.danielrodriguez.truequesprestamosgeek.model.Videojuegos
+import com.danielrodriguez.truequesprestamosgeek.model.*
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.mindrot.jbcrypt.BCrypt
 
 
 class DatabaseFactory {
@@ -27,7 +25,7 @@ class DatabaseFactory {
                     .insertAndGetId {
                         it[nombre] = "Juan"
                         it[email] = "juan@email.com"
-                        it[password] = "123456"
+                        it[password] = BCrypt.hashpw("123456", BCrypt.gensalt())
                     }
                 println("👤 Usuario Juan insertado.")
             }
@@ -37,7 +35,7 @@ class DatabaseFactory {
                     .insertAndGetId {
                         it[nombre] = "Maria"
                         it[email] = "maria@email.com"
-                        it[password] = "abcdef"
+                        it[password] = BCrypt.hashpw("abcdef", BCrypt.gensalt())
                     }
                 println("👤 Usuario Maria insertado.")
             }
@@ -89,13 +87,13 @@ class DatabaseFactory {
 
     private fun crearTablas() {
         transaction {
-            SchemaUtils.drop(Usuarios, Videojuegos, Libros) // Dropea las tablas
-            SchemaUtils.create(Usuarios, Videojuegos, Libros) // Crea las tablas
+            SchemaUtils.drop(Usuarios, Videojuegos, Libros, Productos) // Dropea las tablas
+            SchemaUtils.create(Usuarios, Videojuegos, Libros, Productos) // Crea las tablas
         }
         println("💥 Tablas eliminadas y recreadas con éxito.")
     }
 
-    private fun connect() {
+    fun connect() {
         if (!isConnected) {
             try {
                 Database.connect(
